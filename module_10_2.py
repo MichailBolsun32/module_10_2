@@ -23,13 +23,11 @@ class Knight(Thread):# Наследует от Thread, для создания �
     def run(self):
         print(f'{self.nama}, на нас напали!')
         num_dey = self.NUMBER_ENEMY // self.power
-        deys = 0
-        for _ in range(num_dey):
+        for deys in range(num_dey):
             time.sleep(1)
-            deys += 1
-            print(f'{self.nama}, сражается {deys} день(дня), осталось {self.NUMBER_ENEMY - self.power * deys} воинов')
+            print(f'{self.nama}, сражается {deys + 1} день(дня), осталось {self.NUMBER_ENEMY - self.power * (deys + 1)} воинов')
 
-        print(f'{self.nama}, одержал победу спустя {deys} дней(дня)!')
+        print(f'{self.nama}, одержал победу спустя {deys + 1} дней(дня)!')
 
 
 first_knight = Knight('Sir Lancelot', 10)
